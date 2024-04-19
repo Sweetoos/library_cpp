@@ -1,6 +1,6 @@
-#include "patron.hpp"
+#include "Reader.hpp"
 
-Patron::Patron(std::string name[2], const std::string &phoneNumber, const std::string &address)
+Reader::Reader(std::string name[2], const std::string &phoneNumber, const std::string &address)
 {
     this->name[2]=name[2];
     this->isActiveStatus=isActiveStatus;

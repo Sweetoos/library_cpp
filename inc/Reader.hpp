@@ -2,7 +2,7 @@
 
 #include <string>
 
-class Patron
+class Reader
 {
 private:
     std::string name[2];
@@ -12,5 +12,6 @@ private:
     double debt = 0.0;
 
 public:
-    Patron(std::string name[2], const std::string &phoneNumber, const std::string &address);
+    Reader(std::string name[2], const std::string &phoneNumber, const std::string &address);
+    
 };

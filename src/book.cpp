@@ -1,58 +1,74 @@
 #include "book.hpp"
 
-Book::Book(std::string title, std::string author[2], std::list<std::string> genre, int isbn, int releaseYear)
+// Constructors
+Book::Book(std::string title, std::list<std::array<std::string, 2>> authors, std::list<std::string> genres, int isbn, int releaseYear)
 {
     this->title = title;
-    this->author[2] = author[2];
-    this->genreList = genreList;
+    this->authors = authors;
+    this->genres = genres;
     this->isbn = isbn;
     this->releaseYear = releaseYear;
 }
+
+// Setters
 void Book::setTitle(std::string title)
 {
     this->title = title;
 }
 
-void Book::setAuthor(std::string author[2])
+void Book::setAuthors(std::list<std::array<std::string, 2>> authors)
 {
-    this->author[2] = author[2];
+    this->authors = authors;
 }
-void Book::setGenre(std::list<std::string> genreList) 
+
+void Book::setGenre(std::list<std::string> genres)
 {
-    this->genreList=genreList;
+    this->genres = genres;
 }
-std::list<std::string> Book::getGenre()
+
+void Book::setIsbn(int isbn)
 {
-    return genreList;
+    this->isbn = isbn;
 }
-void Book::setIsbn(int isbn) 
+
+void Book::setReleaseYear(int releaseYear)
 {
-    this->isbn=isbn;
+    this->releaseYear = releaseYear;
 }
-void Book::setReleaseYear(int releaseYear) 
-{
-    this->releaseYear=releaseYear;
-}
-std::string Book::getTitle() 
+
+// Getters
+std::string Book::getTitle()
 {
     return title;
 }
-std::string Book::getAuthor() 
+
+std::list<std::array<std::string, 2>> Book::getAuthors()
 {
-    return author[2];
+    return authors;
 }
 
-int Book::getIsbn() 
+std::list<std::string> Book::getGenre()
 {
-    
+    return genres;
 }
-int Book::getReleaseYear() {}
+
+int Book::getIsbn()
+{
+    return isbn;
+}
+
+int Book::getReleaseYear()
+{
+    return releaseYear;
+}
+
+// Additional methods
 void Book::addGenre(std::string genre)
 {
-    genreList.push_back(genre);
-}
-void Book::removeGenre(std::string genre)
-{
-    genreList.remove(genre);
+    genres.push_back(genre);
 }
 
+void Book::removeGenre(std::string genre)
+{
+    genres.remove(genre);
+}

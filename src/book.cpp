@@ -1,8 +1,9 @@
 #include "book.hpp"
 
 // Constructors
-Book::Book(std::string title, std::list<std::array<std::string, 2>> authors, std::list<std::string> genres, int isbn, int releaseYear)
+Book::Book(std::string bookID, std::string title, std::list<std::array<std::string, 2>> authors, std::list<std::string> genres, int isbn, int releaseYear)
 {
+    this->bookID = bookID;
     this->title = title;
     this->authors = authors;
     this->genres = genres;
@@ -11,6 +12,10 @@ Book::Book(std::string title, std::list<std::array<std::string, 2>> authors, std
 }
 
 // Setters
+void Book::setBookID(std::string bookID)
+{
+    this->bookID = bookID;
+}
 void Book::setTitle(std::string title)
 {
     this->title = title;
@@ -37,6 +42,10 @@ void Book::setReleaseYear(int releaseYear)
 }
 
 // Getters
+std::string Book::getBookID()
+{
+    return bookID;
+}
 std::string Book::getTitle()
 {
     return title;
@@ -63,12 +72,22 @@ int Book::getReleaseYear()
 }
 
 // Additional methods
-void Book::addGenre(std::string genre)
+void Book::addGenre(const std::string &genre)
 {
     genres.push_back(genre);
 }
 
-void Book::removeGenre(std::string genre)
+void Book::removeGenre(const std::string &genre)
 {
     genres.remove(genre);
+}
+
+void Book::addAuthor(const std::array<std::string, 2> &author)
+{
+    authors.push_back(author);
+}
+
+void Book::removeAuthor(const std::array<std::string, 2> &author)
+{
+    authors.remove(author);
 }

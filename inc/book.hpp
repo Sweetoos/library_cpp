@@ -14,8 +14,9 @@ private:
     int releaseYear;
 
 public:
-    //Constructors
+    // Constructors
     Book(
+        std::string bookID,
         std::string title,
         std::list<std::array<std::string, 2>> authors,
         std::list<std::string> genres,
@@ -23,6 +24,7 @@ public:
         int releaseYear);
 
     // Setters
+    void setBookID(std::string bookID);
     void setTitle(std::string title);
     void setAuthors(std::list<std::array<std::string, 2>> authors);
     void setGenre(std::list<std::string> genres);
@@ -30,16 +32,20 @@ public:
     void setReleaseYear(int releaseYear);
 
     // Getters
+    std::string getBookID();
     std::string getTitle();
     std::list<std::array<std::string, 2>> getAuthors();
     std::list<std::string> getGenre();
     int getIsbn();
     int getReleaseYear();
 
-    // Additional methods
-    void addGenre(std::string genre);
-    void removeGenre(std::string genre);
-    void addAuthor(std::string author);
-    void removeAuthor(std::string author);
+    //Add methods
+    void addGenre(const std::string &genre);
+    void addAuthor(const std::array<std::string, 2> &author);
 
+    //Remove methods
+    void removeGenre(const std::string &genre);
+    void removeAuthor(const std::array<std::string, 2> &author);
+
+    // Additional methods
 };

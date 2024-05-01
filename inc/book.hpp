@@ -6,7 +6,7 @@
 class Book
 {
 private:
-    std::string bookID;
+    static std::string bookID;
     std::string title;
     std::list<std::array<std::string, 2>> authors; // Surname and name
     std::list<std::string> genres;

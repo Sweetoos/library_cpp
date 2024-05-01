@@ -1,21 +1,25 @@
 // reader.cpp
 #include "patron.hpp"
 
-Patron::Patron(std::string name[2], const std::string &phoneNumber, const std::string &address)
+Patron::Patron(const std::string &firstName, const std::string &lastName, const std::string &phoneNumber, const std::string &address)
 {
-    this->name[0] = name[0];
-    this->name[1] = name[1];
+    this->firstName = firstName;
+    this->lastName = lastName;
     this->phoneNumber = phoneNumber;
     this->address = address;
-    this->isActiveStatus = true; // Default value
-    this->debt = 0.0;            // Default value
+    this->isActiveStatus = true; 
+    this->debt = 0.0;            
 }
 
 // Setters
-void Patron::setName(const std::string &firstName, const std::string &lastName)
+void Patron::setFirstName(const std::string &firstName)
 {
-    this->name[0] = firstName;
-    this->name[1] = lastName;
+    this->firstName = firstName;
+}
+
+void Patron::setLastName(const std::string &lastName)
+{
+    this->lastName = lastName;
 }
 
 void Patron::setIsActiveStatus(bool isActive)
@@ -39,9 +43,13 @@ void Patron::setDebt(double debt)
 }
 
 // Getters
-std::string Patron::getName()
+std::string Patron::getFirstName()
 {
-    return name[0] + " " + name[1];
+    return firstName;
+}
+std::string Patron::getLastName()
+{
+    return lastName;
 }
 
 bool Patron::getIsActiveStatus()

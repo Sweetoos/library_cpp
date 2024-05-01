@@ -5,7 +5,8 @@
 class Patron
 {
 private:
-    std::string name[2];
+    std::string firstName;
+    std::string lastName;
     bool isActiveStatus = true;
     std::string phoneNumber;
     std::string address;
@@ -13,17 +14,19 @@ private:
 
 public:
     // Constructors
-    Patron(std::string name[2], const std::string &phoneNumber, const std::string &address);
+    Patron(const std::string &firsName, const std::string &lastName, const std::string &phoneNumber, const std::string &address);
 
     // Setters
-    void setName(const std::string &firstName, const std::string &lastName);
+    void setFirstName(const std::string &firstName);
+    void setLastName(const std::string &lastName);
     void setIsActiveStatus(bool isActive);
     void setPhoneNumber(const std::string &phoneNumber);
     void setAddress(const std::string &address);
     void setDebt(double debt);
 
     // Getters
-    std::string getName();
+    std::string getFirstName();
+    std::string getLastName();
     bool getIsActiveStatus();
     std::string getPhoneNumber();
     std::string getAddress();

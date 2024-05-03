@@ -71,23 +71,4 @@ int Book::getReleaseYear()
     return releaseYear;
 }
 
-// Additional methods
-void Book::addGenre(const std::string &genre)
-{
-    genres.push_back(genre);
-}
 
-void Book::removeGenre(const std::string &genre)
-{
-    genres.remove(genre);
-}
-
-void Book::addAuthor(const std::array<std::string, 2> &author)
-{
-    authors.push_back(author);
-}
-
-void Book::removeAuthor(const std::array<std::string, 2> &author)
-{
-    authors.remove(author);
-}

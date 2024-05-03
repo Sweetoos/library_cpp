@@ -6,12 +6,16 @@
 std::ofstream booksOut("books.dat");
 std::ofstream readersOut("readers.dat");
 
-void saveFile(std::string fileName)
+void readFile(const std::string &fileName)
 {
-    std::ifstream file(fileName);
+    std::ofstream file(fileName);
     if(!file.is_open())
     {
         std::cerr << "Couldn't open " << fileName << " file" << std::endl;
         return;
     }
 }
+
+
+
+

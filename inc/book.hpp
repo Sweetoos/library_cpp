@@ -8,10 +8,12 @@ class Book
 private:
     static std::string bookID;
     std::string title;
-    std::list<std::array<std::string, 2>> authors; // Surname and name
-    std::list<std::string> genres;
     int isbn;
     int releaseYear;
+
+protected:
+    std::list<std::array<std::string, 2>> authors; // Surname and name
+    std::list<std::string> genres;
 
 public:
     // Constructors
@@ -38,14 +40,6 @@ public:
     std::list<std::string> getGenre();
     int getIsbn();
     int getReleaseYear();
-
-    //Add methods
-    void addGenre(const std::string &genre);
-    void addAuthor(const std::array<std::string, 2> &author);
-
-    //Remove methods
-    void removeGenre(const std::string &genre);
-    void removeAuthor(const std::array<std::string, 2> &author);
 
     // Additional methods
 };

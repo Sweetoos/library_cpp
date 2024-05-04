@@ -1,8 +1,16 @@
 // reader.cpp
 #include "patron.hpp"
 
-Patron::Patron(const std::string &firstName, const std::string &lastName, const std::string &phoneNumber, const std::string &address)
+Patron::Patron(const std::string patronLogin,
+               const std::string patronPassword,
+               const std::string firstName,
+               const std::string lastName,
+               const std::string phoneNumber,
+               const std::string address,
+               double debt)
 {
+    this->patronLogin = patronLogin;
+    this->patronPassword = patronPassword;
     this->firstName = firstName;
     this->lastName = lastName;
     this->phoneNumber = phoneNumber;
@@ -12,6 +20,15 @@ Patron::Patron(const std::string &firstName, const std::string &lastName, const 
 }
 
 // Setters
+void Patron::setPatronLogin(const std::string &patronLogin)
+{
+    this->patronLogin = patronLogin;
+}
+
+void Patron::setPatronPassword(const std::string &patronPassword)
+{
+    this->patronPassword = patronPassword;
+}
 void Patron::setFirstName(const std::string &firstName)
 {
     this->firstName = firstName;
@@ -42,6 +59,8 @@ void Patron::setDebt(double debt)
     this->debt = debt;
 }
 
+
+
 // Getters
 std::string Patron::getFirstName()
 {
@@ -70,4 +89,14 @@ std::string Patron::getAddress()
 double Patron::getDebt()
 {
     return debt;
+}
+
+std::string Patron::getPatronLogin()
+{
+    return patronLogin;
+}
+
+std::string Patron::getPatronPassword()
+{
+    return patronPassword;
 }

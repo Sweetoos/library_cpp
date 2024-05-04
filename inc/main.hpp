@@ -4,3 +4,4 @@
 #include "patron.hpp"
 #include "fileHandler.hpp"
 #include "bookManager.hpp"
+#include "additional_functions.hpp"
